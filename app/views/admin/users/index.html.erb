@@ -1,0 +1,45 @@
+<div style="max-width: 900px; margin: 2rem auto; font-family: system-ui, -apple-system, sans-serif;">
+  <h2>User Account Management (C-02)</h2>
+
+  <% if flash[:notice] %>
+    <p style="padding: 0.75rem; background-color: #d4edda; color: #155724; border-radius: 4px;"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p style="padding: 0.75rem; background-color: #f8d7da; color: #721c24; border-radius: 4px;"><%= flash[:alert] %></p>
+  <% end %>
+
+  <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; border-color: #ccc;">
+    <thead>
+      <tr style="background-color: #f4f4f4; text-align: left;">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><strong><%= user.role.humanize %></strong></td>
+          <td>
+            <span style="color: <%= user.active? ? '#28a745' : '#dc3545' %>; font-weight: bold;">
+              <%= user.active? ? "Active" : "Inactive" %>
+            </span>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_admin_user_path(user) %> |
+            <%= button_to (user.active? ? "Deactivate" : "Activate"),
+                          toggle_active_admin_user_path(user),
+                          method: :patch,
+                          style: "display: inline; cursor: pointer;" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
