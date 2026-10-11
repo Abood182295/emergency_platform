@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-danger text-white">
+          <h4 class="mb-0">تقديم بلاغ طوارئ جديد (منطقة حائل)</h4>
+        </div>
+        <div class="card-body">
+          <form action="/incidents" method="POST">
+            <div class="mb-3">
+              <label for="incidentType" class="form-label">نوع البلاغ</label>
+              <select class="form-select" id="incidentType" name="incident[incident_type]" required>
+                <option value="" selected disabled>اختر نوع الحالة...</option>
+                <option value="fire">حريق</option>
+                <option value="flood">تجمع مياه أمطار / سيول</option>
+                <option value="accident">حادث مروري</option>
+                <option value="medical">حالة طارئة أخرى</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="location" class="form-label">الموقع في مدينة حائل</label>
+              <input type="text" class="form-control" id="location" name="incident[location]" placeholder="مثال: حي الجامعيين" required>
+            </div>
+            <div class="mb-3">
+              <label for="severity" class="form-label">مستوى الخطورة</label>
+              <select class="form-select" id="severity" name="incident[severity]" required>
+                <option value="low">منخفضة</option>
+                <option value="medium" selected>متوسطة</option>
+                <option value="high">عالية (حرجة)</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">تفاصيل البلاغ</label>
+              <textarea class="form-control" id="description" name="incident[description]" rows="4" required></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-danger btn-lg">إرسال البلاغ لعمليات حائل</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: talal18051
+  password:
+  host: localhost
+  port: 5432
+  database: emergency_platform_hail_development
