@@ -22,10 +22,10 @@ class SessionsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   rescue StandardError => e
-    Rails.logger.error "Login exception: #{e.message}"
-    flash.now[:alert] = "An unexpected error occurred: #{e.message}"
-    render :new, status: :unprocessable_entity
-  end
+  Rails.logger.error "Login exception: #{e.message}"
+  flash.now[:alert] = "An unexpected error occurred. Please try again later."
+  render :new, status: :unprocessable_entity
+end
 
   def destroy
     session[:user_id] = nil
