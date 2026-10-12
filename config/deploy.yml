@@ -1,8 +1,15 @@
 # Name of your application. Used to uniquely configure containers.
+<<<<<<< HEAD
 service: emergency_platform
 
 # Name of the container image (use your-user/app-name on external registries).
 image: emergency_platform
+=======
+service: emergency_platform_hail
+
+# Name of the container image (use your-user/app-name on external registries).
+image: emergency_platform_hail
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 
 # Deploy to these servers.
 servers:
@@ -52,7 +59,11 @@ env:
     # WEB_CONCURRENCY: 2
 
     # Match this to any external database server to configure Active Record correctly
+<<<<<<< HEAD
     # Use emergency_platform-db for a db accessory server on same machine via local kamal docker network.
+=======
+    # Use emergency_platform_hail-db for a db accessory server on same machine via local kamal docker network.
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
     # DB_HOST: 192.168.0.2
 
     # Log everything from Rails
@@ -69,7 +80,11 @@ aliases:
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
+<<<<<<< HEAD
   - "emergency_platform_storage:/rails/storage"
+=======
+  - "emergency_platform_hail_storage:/rails/storage"
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
 # hitting 404 on in-flight requests. Combines all files from new and old
@@ -85,7 +100,11 @@ builder:
   #
   # # Pass arguments and secrets to the Docker build process
   # args:
+<<<<<<< HEAD
   #   RUBY_VERSION: ruby-3.2.11
+=======
+  #   RUBY_VERSION: 3.2.2
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
   # secrets:
   #   - GITHUB_TOKEN
   #   - RAILS_MASTER_KEY

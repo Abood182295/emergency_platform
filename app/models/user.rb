@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+<<<<<<< HEAD
   has_secure_password
 
   enum :role, {
@@ -16,3 +17,8 @@ class User < ApplicationRecord
     active?
   end
 end
+=======
+    has_secure_password
+    validates :email, presence: true, uniqueness: true
+  end
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272

@@ -14,6 +14,11 @@ gem "importmap-rails"
 gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
+<<<<<<< HEAD
+=======
+# Build and process CSS [https://github.com/rails/cssbundling-rails]
+gem "cssbundling-rails"
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
@@ -63,4 +68,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272

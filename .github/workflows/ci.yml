@@ -3,7 +3,11 @@ name: CI
 on:
   pull_request:
   push:
+<<<<<<< HEAD
     branches: [ master ]
+=======
+    branches: [ main ]
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 
 jobs:
   scan_ruby:
@@ -86,7 +90,11 @@ jobs:
 
     steps:
       - name: Install packages
+<<<<<<< HEAD
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y libpq-dev libvips
+=======
+        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y libpq-dev libvips node-gyp
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 
       - name: Checkout code
         uses: actions/checkout@v6
@@ -125,7 +133,11 @@ jobs:
 
     steps:
       - name: Install packages
+<<<<<<< HEAD
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y libpq-dev libvips
+=======
+        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y libpq-dev libvips node-gyp
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 
       - name: Checkout code
         uses: actions/checkout@v6

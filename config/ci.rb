@@ -6,6 +6,10 @@ CI.run do
   step "Style: Ruby", "bin/rubocop"
 
   step "Security: Gem audit", "bin/bundler-audit"
+<<<<<<< HEAD
+=======
+  step "Security: Yarn vulnerability audit", "yarn audit"
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
   step "Security: Importmap vulnerability audit", "bin/importmap audit"
   step "Security: Brakeman code analysis", "bin/brakeman --quiet --no-pager --exit-on-warn --exit-on-error"
   step "Tests: Rails", "bin/rails test"

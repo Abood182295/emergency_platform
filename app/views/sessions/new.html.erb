@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div style="max-width: 400px; margin: 3rem auto; font-family: system-ui, sans-serif;">
   <h2>Sign In - Emergency Platform</h2>
 
@@ -20,4 +21,40 @@
       <%= f.submit "Sign In", style: "padding: 0.5rem 1rem; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px;" %>
     </div>
   <% end %>
+=======
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+          <h4 class="mb-0">تسجيل الدخول - منصة طوارئ حائل</h4>
+        </div>
+        <div class="card-body p-4">
+          <%= form_with(url: login_path, local: true, class: "needs-validation") do |form| %>
+            <div class="mb-3">
+              <%= form.label :email, "البريد الإلكتروني", class: "form-label" %>
+              <%= form.email_field :email, class: "form-control", placeholder: "أدخل بريدك الإلكتروني", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :password, "كلمة المرور", class: "form-label" %>
+              <%= form.password_field :password, class: "form-control", placeholder: "أدخل كلمة المرور", required: true %>
+            </div>
+
+            <div class="d-grid gap-2">
+              <%= form.submit "دخول", class: "btn btn-primary btn-lg" %>
+            </div>
+          <% end %>
+
+          <!-- رابط التسجيل الجديد -->
+          <div class="text-center mt-4">
+            <p class="mb-0 text-muted">ليس لديك حساب؟ 
+              <%= link_to "تسجيل مواطن جديد", new_citizen_path, class: "text-decoration-none fw-bold" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 </div>

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+<<<<<<< HEAD
   def new; end
 
   def create
@@ -31,3 +32,14 @@ class SessionsController < ApplicationController
     redirect_to login_path, notice: "Signed out successfully.", status: :see_other
   end
 end
+=======
+  def new
+  end
+
+  def create
+  end
+
+  def destroy
+  end
+end
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272

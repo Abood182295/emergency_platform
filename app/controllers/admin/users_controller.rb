@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module Admin
   class UsersController < ApplicationController
     before_action :require_admin
@@ -34,3 +35,15 @@ module Admin
     end
   end
 end
+=======
+class Admin::UsersController < ApplicationController
+  def index
+  end
+
+  def edit
+  end
+
+  def update
+  end
+end
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272

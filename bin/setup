@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/usr/bin/env ruby.exe
+=======
+#!/usr/bin/env ruby
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 require "fileutils"
 
 APP_ROOT = File.expand_path("..", __dir__)
@@ -15,6 +19,12 @@ FileUtils.chdir APP_ROOT do
   puts "== Installing dependencies =="
   system("bundle check") || system!("bundle install")
 
+<<<<<<< HEAD
+=======
+  # Install JavaScript dependencies
+  system("yarn install --check-files")
+
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
   # puts "\n== Copying sample files =="
   # unless File.exist?("config/database.yml")
   #   FileUtils.cp "config/database.yml.sample", "config/database.yml"
