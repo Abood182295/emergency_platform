@@ -2,13 +2,22 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
+<<<<<<< HEAD
+# docker build -t emergency_platform .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name emergency_platform emergency_platform
+=======
 # docker build -t emergency_platform_hail .
 # docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name emergency_platform_hail emergency_platform_hail
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
+<<<<<<< HEAD
+ARG RUBY_VERSION=3.2.11
+=======
 ARG RUBY_VERSION=3.2.2
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
 # Rails app lives here
@@ -30,6 +39,13 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
+<<<<<<< HEAD
+# Install packages needed to build gems
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y build-essential git libpq-dev libvips libyaml-dev pkg-config && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+=======
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev libvips libyaml-dev node-gyp pkg-config python-is-python3 && \
@@ -44,6 +60,7 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
     rm -rf /tmp/node-build-master
 RUN corepack enable && yarn set version $YARN_VERSION
 
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 # Install application gems
 COPY vendor/* ./vendor/
 COPY Gemfile Gemfile.lock ./
@@ -53,10 +70,13 @@ RUN bundle install && \
     # -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
     bundle exec bootsnap precompile -j 1 --gemfile
 
+<<<<<<< HEAD
+=======
 # Install node modules
 COPY package.json yarn.lock ./
 RUN yarn install --immutable
 
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 # Copy application code
 COPY . .
 
@@ -64,11 +84,22 @@ COPY . .
 # -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
 RUN bundle exec bootsnap precompile -j 1 app/ lib/
 
+<<<<<<< HEAD
+# Adjust binfiles to be executable on Linux
+RUN chmod +x bin/* && \
+    sed -i "s/\r$//g" bin/* && \
+    sed -i 's/ruby\.exe$/ruby/' bin/*
+
+=======
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 
+<<<<<<< HEAD
+=======
 RUN rm -rf node_modules
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 
 
 # Final stage for app image

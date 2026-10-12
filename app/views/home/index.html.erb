@@ -1,8 +1,35 @@
+<<<<<<< HEAD
+<div style="max-width: 600px; margin: 3rem auto; font-family: system-ui, sans-serif;">
+  <h2>Emergency Platform Dashboard</h2>
+
+  <% if flash[:notice] %>
+    <p style="padding: 0.75rem; background-color: #d4edda; color: #155724; border-radius: 4px;"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p style="padding: 0.75rem; background-color: #f8d7da; color: #721c24; border-radius: 4px;"><%= flash[:alert] %></p>
+  <% end %>
+
+  <div style="padding: 1.5rem; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9;">
+    <p><strong>Welcome, <%= current_user.name %>!</strong></p>
+    <p><strong>Email:</strong> <%= current_user.email %></p>
+    <p><strong>Role:</strong> <%= current_user.role.humanize %></p>
+
+    <% if current_user.administrator? %>
+      <p style="margin-top: 1rem;">
+        <%= link_to "Manage Users (Admin Panel)", admin_users_path, style: "color: #007bff; text-decoration: underline;" %>
+      </p>
+    <% end %>
+
+    <div style="margin-top: 1.5rem;">
+      <%= button_to "Sign Out", logout_path, method: :delete, data: { turbo: false }, style: "padding: 0.5rem 1rem; cursor: pointer; background: #dc3545; color: white; border: none; border-radius: 4px;" %>
+    </div>
+=======
 <div class="p-5 mb-4 bg-white rounded-3 shadow-sm border">
   <div class="container-fluid py-3">
     <h1 class="display-5 fw-bold text-danger">منصة إدارة الطوارئ والأزمات - حائل</h1>
     <p class="col-md-8 fs-4 text-secondary">تم تفعيل التخطيط المشترك (Shared Layout) وبوتستراب بنجاح تام.</p>
     <hr class="my-4">
     <p>هذه هي الصفحة الرئيسية للنظام الداعمة للغة العربية (RTL).</p>
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
   </div>
 </div>

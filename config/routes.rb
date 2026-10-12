@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+  root "home#index"
+
+  get    "/login",  to: "sessions#new"
+  post   "/login",  to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
+=======
   get "incidents/create"
   get "incidents/new"
   get "incidents/index"
@@ -32,6 +40,7 @@ Rails.application.routes.draw do
   resources :responders, only: [:index, :show, :update]
 
   # مسارات إدارة المستخدمين للمشرفين (Admin)
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
   namespace :admin do
     resources :users, only: [:index, :edit, :update] do
       member do

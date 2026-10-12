@@ -33,8 +33,11 @@
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+<<<<<<< HEAD
+=======
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
 
 /node_modules
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272

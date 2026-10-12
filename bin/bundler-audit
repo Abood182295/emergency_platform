@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+#!/usr/bin/env ruby.exe
+=======
 #!/usr/bin/env ruby
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
 require_relative "../config/boot"
 require "bundler/audit/cli"
 

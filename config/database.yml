@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: postgres
+  host: localhost
+
+development:
+  <<: *default
+  database: emergency_platform_development
+
+test:
+  <<: *default
+  database: emergency_platform_test
+
+production:
+  <<: *default
+  database: emergency_platform_production
+  password: <%= ENV["EMERGENCY_PLATFORM_DATABASE_PASSWORD"] %>
+=======
 development:
   adapter: postgresql
   encoding: unicode
@@ -7,3 +29,4 @@ development:
   host: localhost
   port: 5432
   database: emergency_platform_hail_development
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272

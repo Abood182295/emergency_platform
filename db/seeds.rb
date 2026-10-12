@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+User.find_or_create_by!(email: "admin@hail.gov.sa") do |u|
+  u.name = "System Administrator"
+  u.password = "Admin123!"
+  u.role = "administrator"
+  u.active = true
+end
+
+User.find_or_create_by!(email: "responder@hail.gov.sa") do |u|
+  u.name = "Emergency Responder"
+  u.password = "Responder123!"
+  u.role = "responder"
+  u.active = true
+end
+=======
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -7,3 +22,4 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272

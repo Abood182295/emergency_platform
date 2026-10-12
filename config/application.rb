@@ -6,7 +6,11 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+<<<<<<< HEAD
+module EmergencyPlatform
+=======
 module EmergencyPlatformHail
+>>>>>>> 05edbb2529e47c264ecfe3a980c118e24c0ae272
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1
