@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <title>مركز إدارة الأزمات · نموذج توضيحي</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <style>
+      :root { --ink:#142638; --muted:#637487; --teal:#087f78; --line:#dce5e9; --bg:#f1f6f7; }
+      * { box-sizing:border-box } body { margin:0; background:radial-gradient(ellipse at 90% 0,#d9eeeb 0,transparent 38%),var(--bg); color:var(--ink); font-family:"Segoe UI",Tahoma,Arial,sans-serif; min-height:100vh }
+      .bar { min-height:72px; background:#10283a; color:white; display:flex; align-items:center; justify-content:space-between; padding:12px max(22px,calc((100vw - 1080px)/2)); box-shadow:0 5px 18px #10283a20 }
+      .brand { display:flex; gap:12px; align-items:center; font-weight:700 }.mark { height:38px; width:38px; display:grid; place-items:center; background:#087f78; border-radius:12px; font-size:21px }.en { direction:ltr; unicode-bidi:isolate; color:#b8ced4; font-size:.82em; font-weight:500 }
+      main { max-width:1080px; margin:48px auto; padding:0 22px }.auth-wrap { max-width:480px; margin:0 auto }.eyebrow { color:var(--teal); font-size:.88rem; font-weight:700 } h1 { font-size:2rem; margin:10px 0 8px }.sub { color:var(--muted); line-height:1.8; margin:0 0 22px }
+      .card,.tile { background:#fff; border:1px solid var(--line); border-radius:17px; padding:26px; box-shadow:0 16px 42px #1330440a }.card h2 { margin-top:0 }.label { display:block; font-weight:650; margin:16px 0 8px }input { width:100%; height:48px; border:1px solid #cbd8de; border-radius:10px; padding:0 13px; font:inherit }input:focus { outline:3px solid #087f7825; border-color:var(--teal) }.ltr { direction:ltr; text-align:left }
+      .button,button { display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:10px; background:var(--teal); color:#fff; padding:12px 18px; font:inherit; font-weight:700; text-decoration:none; cursor:pointer }.button:hover,button:hover { background:#066b65 }.wide { width:100%; margin-top:22px }.quiet { background:#e9eff2; color:#234052 }.alert { border-radius:10px; padding:12px 14px; margin:12px 0; background:#fff1ef; border:1px solid #f2cfca; color:#8e2929; line-height:1.6 }.notice { background:#e9f6f1; border-color:#c7e9dd; color:#17664f }.hint { border-top:1px solid var(--line); margin-top:18px; padding-top:14px; color:var(--muted); font-size:.88rem; line-height:1.7 }.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin:24px 0 }.tile p { color:var(--muted); line-height:1.7; margin-bottom:0 }.pill { display:inline-block; border-radius:999px; background:#e3f3f1; color:#086d67; padding:6px 12px; font-size:.85rem; font-weight:700 }.head { display:flex; align-items:center; justify-content:space-between; gap:16px }.actions { display:flex; align-items:center; gap:10px }.denied { border-right:4px solid #a23737 }footer { text-align:center; color:#788894; font-size:.82rem; padding:25px }
+      @media(max-width:700px) { main { margin:30px auto }.grid { grid-template-columns:1fr }.head { align-items:flex-start; flex-direction:column } h1 { font-size:1.65rem }.card { padding:21px } }
+    </style>
+  </head>
+  <body>
+    <header class="bar"><div class="brand"><span class="mark" aria-hidden="true">✚</span><span>مركز إدارة الأزمات <span class="en">HAIL · DEMO</span></span></div><span class="en">ISOLATED PROTOTYPE</span></header>
+    <main>
+      <% if flash[:alert].present? %><div class="alert" role="alert"><%= flash[:alert] %></div><% end %>
+      <% if flash[:notice].present? %><div class="alert notice" role="status"><%= flash[:notice] %></div><% end %>
+      <%= yield %>
+    </main>
+    <footer>نموذج محلي معزول للتوضيح الأكاديمي · لا يتصل بالنظام الرئيسي أو بخدمات خارجية</footer>
+  </body>
+</html>

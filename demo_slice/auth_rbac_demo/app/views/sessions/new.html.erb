@@ -1,0 +1,16 @@
+<div class="auth-wrap">
+  <div class="eyebrow">بوابة الدخول <span class="en">/ SECURE SIGN IN</span></div>
+  <h1>مرحباً بعودتك</h1>
+  <p class="sub">سجّل الدخول للوصول إلى مساحة العمل المناسبة لدورك في منظومة إدارة الأزمات.</p>
+  <section class="card">
+    <% if @error.present? %><div class="alert" role="alert"><%= @error %></div><% end %>
+    <%= form_with url: login_path, method: :post do %>
+      <label class="label" for="email">البريد الإلكتروني <span class="en">Email</span></label>
+      <%= email_field_tag :email, params[:email], id: "email", class: "ltr", autocomplete: "username", required: true, maxlength: 254, placeholder: "name@demo.local" %>
+      <label class="label" for="password">كلمة المرور <span class="en">Password</span></label>
+      <%= password_field_tag :password, nil, id: "password", class: "ltr", autocomplete: "current-password", required: true, maxlength: 72, placeholder: "••••••••••••" %>
+      <%= submit_tag "تسجيل الدخول / SIGN IN", class: "wide" %>
+    <% end %>
+    <div class="hint"><strong>نموذج توضيحي محلي</strong><br>استخدم أحد الحسابات التجريبية المدرجة في README. لا تدخل بيانات حقيقية.</div>
+  </section>
+</div>

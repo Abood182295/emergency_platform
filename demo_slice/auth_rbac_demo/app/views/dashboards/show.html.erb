@@ -1,0 +1,12 @@
+<% role_data = {
+  "administrator" => ["مدير النظام", "Administrator", [["إدارة المستخدمين", "مراجعة حسابات فرق المدينة وصلاحياتهم."], ["إعدادات النظام", "عرض إعدادات الوصول وسجلات التشغيل."], ["نظرة عامة", "متابعة مؤشرات جاهزية مركز الأزمات."]]],
+  "coordinator" => ["منسّق العمليات", "Coordinator", [["مركز البلاغات", "فرز البلاغات الواردة وتحديد الأولويات."], ["توزيع المهام", "تنسيق الموارد بين فرق الاستجابة."], ["صورة العمليات", "متابعة حالة الحوادث على مستوى المدينة."]]],
+  "responder" => ["المستجيب الميداني", "Responder", [["مهامي الحالية", "مراجعة التكليفات الميدانية المسندة إليك."], ["حالة الاستجابة", "عرض حالة الفريق وتحديث الجاهزية."], ["إرشادات السلامة", "الرجوع إلى تعليمات الاستجابة المعتمدة."]]]
+}[@role] %>
+<div class="head"><div><div class="eyebrow">لوحة التحكم <span class="en">/ DASHBOARD</span></div><h1>أهلاً بك في مركز العمليات</h1><p class="sub">هذه مساحة العرض التجريبية المخصصة لدورك.</p></div><div class="actions"><span class="pill"><%= role_data[0] %> / <span class="en"><%= role_data[1] %></span></span><%= button_to "تسجيل الخروج", logout_path, method: :delete, class: "quiet" %></div></div>
+<section class="grid">
+  <% role_data[2].each do |title, description| %>
+    <article class="tile"><span class="pill">لوحة العمل</span><h2><%= title %></h2><p><%= description %></p></article>
+  <% end %>
+</section>
+<section class="card"><h2>صلاحية الجلسة</h2><p class="sub">تم التحقق من الدور على الخادم قبل عرض هذه الصفحة. لا يتصل الحساب التجريبي ببيانات حقيقية.</p><%= link_to "فتح صفحة الدور المقيدة", role_dashboard_path(@role), class: "button quiet" %></section>
